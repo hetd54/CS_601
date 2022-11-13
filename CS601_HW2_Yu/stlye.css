@@ -1,0 +1,228 @@
+:root{
+    --white: white;
+    --dark-blue: #243443;
+    --light-grey: #9FB9BE;
+    --orange: #e56a49;
+    --light-orange: #cd7f4f;
+    --tan: #e9bc83;
+    --padding: 5em 1em 1em 1em;
+  }
+
+
+
+  /* * Selects all elements and makes sure the boxes do not overlap with the timeline */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: var(--dark-blue);
+    background-color: var(--white);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .main {
+    /* Adding padding to the main sections of the page ensures that
+    the menu sits above the content instead of covering a portion of it */
+    padding: var(--padding);
+  }
+
+  .menu {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: right;
+    /* Timeline page has a z-index of 1, so we want to make sure the menu displays on top */
+    z-index: 2;
+  }
+  .menu a {
+    float: right;
+    text-align: center;
+    padding: 14px 16px;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .menu a:hover {
+    background-color: var(--tan);
+    color: var(--dark-blue);
+  }
+  
+  .menu a.active {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: var(--padding);
+
+  }
+  .sidebar h1 {
+    margin-bottom: 0px;
+  }
+
+  #wrapper {
+    margin: 0 auto;
+    border-top: thick double var(--orange);
+  }
+
+@media  (max-width: 768px) {
+
+  .sidebar {
+    font-size: 24px;
+  }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+
+
+}
+
+@media (min-width: 1180px) {
+
+  .sidebar {
+    
+    top:7em;
+    position:fixed;
+    z-index:4;
+    min-height:100%;
+    padding: inherit;
+  }
+
+  #wrapper {
+    width: 55%;
+    margin: 0 auto;
+    float: right;
+    padding: var(--padding);
+    border-left: thick double var(--orange);
+    text-align: left;
+  }
+  
+}
+  /* Timeline page */
+
+/* Heavily inspired by these two timeline examples:
+  https://www.w3schools.com/howto/howto_css_timeline.asp
+  https://codepen.io/paulhbarker/full/apvGdv
+*/
+
+  /* The vertical ruler needs to start after the page title, so giving
+  it a relative position will push it down */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  background-color: var(--dark-blue);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -20px;
+  background-color: var(--white);
+  border: 6px solid var(--orange);
+  top: 20px;
+  /* circles instead of squares */
+  border-radius: 50%;
+  /* circles on the timeline need to appear on top of the timeline */
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -17px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: var(--light-grey);
+  position: relative;
+  border-radius: 6px;
+}
+
+  /* Main page */
+
+
+
+
+   
+th, td {
+    padding: 7px 10px 10px 10px;
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border-bottom: 2px solid var(--dark-blue);
+    border-top: 1px solid var(--light-orange);
+    text-align: left;
+}
+
+
+/* Want to make certain images rounded */
+.rounded {
+  border: thick double var(--orange);
+  border-radius: 9999px;
+  width: 250px;
+}
+
+.logo {
+    width: 40px;
+    padding: 5px;
+}
+
+
+#resume {
+    margin: 10px 200px;
+    padding: 5px 5px;
+    border: 2px solid var(--light-grey);
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
