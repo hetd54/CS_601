@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Heather Yu - CS601</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Montaga&family=Forum">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./form.js"></script>
+</head>
+<body>
+
+<h2>CS 601 - HW 4</h2>
+<form name="studentInfo" action="https://cs601.bu-course-examples.com/hw4/380a98f5-5191-496f-8aa1-7acc1da83cc5" method="post" onsubmit="return onSubmit()">
+  <p id="nameMessage" class="errorMessage"></p>
+  <label for="firstName">First name:</label><br>
+  <input type="text" class="roundedInput" id="firstName" name="firstName" placeholder="Your name..." 
+  required minlength="2"><br>
+  <label for="lastName">Last name:</label><br>
+  <input type="text" class="roundedInput" id="lastName" name="lastName" placeholder="Your last name..."
+   required minlength="2"><br><br>
+  <p id="facilitatorMessage" class="errorMessage"></p>
+  <label for="facilitator">Facilitator name:</label><br>
+  <input type="text" class="roundedInput" id="facilitator" name="facilitator" placeholder="Your facilitator's name..." required><br><br>
+
+  <p>Student's favorite dessert:</p>
+  <input type="radio" id="brownies" name="dessert">
+  <label for="brownies">Brownies</label><br>
+  <input type="radio" id="macaroons" name="dessert">
+  <label for="macaroons">Macaroons</label><br>
+  <input type="radio" id="tiramisu" name="dessert">
+  <label for="tiramisu">Tiramisu</label><br><br>
+
+  <p>Known Languages:</p>
+  <input type="checkbox" id="javaScript" name="language" value="javaScript">
+  <label for="javaScript"> JavaScript</label><br>
+  <input type="checkbox" id="java" name="language" value="java">
+  <label for="java"> Java</label><br>
+  <input type="checkbox" id="python" name="language" value="python">
+  <label for="python"> Python</label><br>
+  <input type="checkbox" id="sql" name="language" value="sql">
+  <label for="sql"> SQL</label><br>
+  <input type="checkbox" id="c++" name="language" value="c++">
+  <label for="c++"> C++</label><br><br>
+
+  <input type="submit" name="submitButton" value="Submit">
+</form>
+
+</body>
+</html>
